@@ -32,22 +32,31 @@ Input = [
 ]
 
 confusing_cities = []
-
+counter = {}
+whithout_hnumber = []
 """
 for i,v in Counter((elem[1],elem[2]) for elem in Input).items():
+    #dict_items([(('Sheraton', 'Amsterdam'), 1), (('Sheraton', 'Buenos Aires'), 3), (('Hilton', 'Amsterdam'), 2), (('Royal Palace', 'Bogota'), 1)])
+    print("i=" + str(i))
+    print("v=" + str(v))
     if v >= 3:
         confusing_cities.append(i[1])
-
-print(confusing_cities)
 """
-
+# get rid of hotel number
 for elem in Input:
-    f= Counter((elem[1],elem[2])).items()
+    whithout_hnumber.append(elem[1:])
 
+# count element whithout_hnumber
+for elem in whithout_hnumber:
+    if elem not in counter:
+        counter[elem] = 0
+    counter[elem] += 1
 
-for i,v in f:
-        if v >= 3:
-            confusing_cities.append(i[1])
+print(counter)
+
+for i, v in counter:
+    if v >= 3:
+        confusing_cities.append(i[1])
 
 print(confusing_cities)
 
