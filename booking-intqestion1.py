@@ -36,26 +36,22 @@ whithout_hnumber = []
 """
 for i,v in Counter((elem[1],elem[2]) for elem in Input).items():
     #dict_items([(('Sheraton', 'Amsterdam'), 1), (('Sheraton', 'Buenos Aires'), 3), (('Hilton', 'Amsterdam'), 2), (('Royal Palace', 'Bogota'), 1)])
-    print("i=" + str(i))
-    print("v=" + str(v))
     if v >= 3:
         confusing_cities.append(i[1])
 """
 # get rid of hotel number
 for elem in Input:
     whithout_hnumber.append(elem[1:])
-
 # count element whithout_hnumber
 for elem in whithout_hnumber:
     if elem not in counter:
         counter[elem] = 0
     counter[elem] += 1
-
-print(counter)
-
-for i, v in counter:
-    if v >= 3:
-        confusing_cities.append(i[1])
-
+# counter output is: {('Sheraton', 'Amsterdam'): 1, ('Sheraton', 'Buenos Aires'): 3, ('Hilton', 'Amsterdam'): 2, ('Royal Palace', 'Bogota'): 1}
+#iterate by keys of dict (like ('Sheraton', 'Amsterdam'))
+for key in counter:
+    #get value of the dict that is amount of same hotels in the same city
+    if int(counter[key]) >= 3:
+        confusing_cities.append(key[1])
 print(confusing_cities)
 
