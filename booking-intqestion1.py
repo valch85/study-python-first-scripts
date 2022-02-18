@@ -72,11 +72,10 @@ for key in counter:
 print("2ND solution")
 print(confusing_cities)
 
-#3D solution via intersection
+#3D solution via intersection not finished
 intersection = {}
 
 for i in Input_correct:
     intersection = set.intersection(i)
 print("3D solution")
 print(list(intersection)[1])
-
