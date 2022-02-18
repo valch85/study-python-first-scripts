@@ -30,7 +30,6 @@ Input = [
 ("hotel_1004", "Sheraton", "Buenos Aires") ,
 ("hotel_1005", "Sheraton", "Buenos Aires")
 ]
-
 confusing_cities = []
 counter = {}
 whithout_hnumber = []
